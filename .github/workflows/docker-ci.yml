@@ -6,16 +6,14 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  # github.repository автоматично підставить <username>/<repo>
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
-  # Джоба 1: Збірка і пуш у GitHub Container Registry
   build-and-push:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      packages: write # Дозвіл на запис образів
+      packages: write
 
     steps:
       - name: Checkout repository
@@ -28,10 +26,10 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      # Переводимо ім'я репозиторію в нижній регістр (вимога Docker)
-      - name: Lowercase image name
+      - name: Clean and lowercase image name
         run: |
-          echo "IMAGE_NAME_LOWER=$(echo ${{ env.IMAGE_NAME }} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
+          CLEAN_NAME=$(echo ${{ env.IMAGE_NAME }} | tr '[:upper:]' '[:lower:]' | sed 's/-$//')
+          echo "IMAGE_NAME_LOWER=$CLEAN_NAME" >> $GITHUB_ENV
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
@@ -40,7 +38,6 @@ jobs:
           push: true
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME_LOWER }}:latest
 
-  # Джоба 2: Пул образу і запуск тестів
   test:
     needs: build-and-push
     runs-on: ubuntu-latest
@@ -55,13 +52,13 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Lowercase image name
+      - name: Clean and lowercase image name
         run: |
-          echo "IMAGE_NAME_LOWER=$(echo ${{ env.IMAGE_NAME }} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
+          CLEAN_NAME=$(echo ${{ env.IMAGE_NAME }} | tr '[:upper:]' '[:lower:]' | sed 's/-$//')
+          echo "IMAGE_NAME_LOWER=$CLEAN_NAME" >> $GITHUB_ENV
 
       - name: Pull Docker image
         run: docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_NAME_LOWER }}:latest
 
       - name: Run tests inside container
-        # Запускаємо контейнер, але замість python app.py виконуємо pytest
         run: docker run ${{ env.REGISTRY }}/${{ env.IMAGE_NAME_LOWER }}:latest pytest test_app.py
