@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ .Release.Name }}-bmi-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: bmi-container
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: Always
+      restartPolicy: Never
+  backoffLimit: 2
