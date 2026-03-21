@@ -2,7 +2,7 @@ replicaCount: 1
 
 # This sets the container image more information can be found here: https://kubernetes.io/docs/concepts/containers/images/
 image:
-  repository: /alinalinamala-collab/postmodern-technologies-in-software-development
+  repository: ghcr.io/alinalinamala-collab/postmodern-technologies-in-software-development
   pullPolicy: Always
   tag: "latest"
 
