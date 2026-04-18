@@ -2,9 +2,9 @@ name: .NET CI
 
 on:
   push:
-    branches: [ "homework3" ]
+    branches: [ "lab3-CLI" ]
   pull_request:
-    branches: [ "homework3" ]
+    branches: [ "lab3-CLI" ]
 
 jobs:
   build-and-test:
