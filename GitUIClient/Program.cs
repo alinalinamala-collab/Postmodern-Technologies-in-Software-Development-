@@ -45,8 +45,8 @@ while (true)
         {
             var message = AnsiConsole.Ask<string>("[bold cyan]Введіть повідомлення для коміту:[/] ");
             var result = gitService.Commit(message);
-            AnsiConsole.MarkupLine($"[bold green]Коміт створено![/]\n{result}");
-        }
+            AnsiConsole.MarkupLine("[bold green]Коміт створено![/]");
+            Console.WriteLine(result); }
         else if (action.Contains("4"))
         {
             AnsiConsole.MarkupLine("[bold yellow]Останні коміти:[/]");
@@ -58,10 +58,11 @@ while (true)
             AnsiConsole.MarkupLine("[bold cyan]Роботу завершено. До побачення![/]");
             break; 
         }
-    }
+        }
     catch (Exception ex)
     {
-        AnsiConsole.MarkupLine($"\n[bold red]Помилка Git:[/] {ex.Message}");
+        AnsiConsole.MarkupLine("\n[bold red]Помилка Git:[/]");
+        Console.WriteLine(ex.Message);
     }
     AnsiConsole.MarkupLine("\n[grey]Натисніть будь-яку клавішу для повернення в меню...[/]");
     Console.ReadKey(true);
