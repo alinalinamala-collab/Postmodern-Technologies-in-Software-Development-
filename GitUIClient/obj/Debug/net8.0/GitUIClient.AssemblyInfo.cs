@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GitUIClient")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+981410f911aa786554f8882168eb8fff466c12ae")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b7dedf8c9cb6cd27ff62373dcc84bfbf069e17de")]
 [assembly: System.Reflection.AssemblyProductAttribute("GitUIClient")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GitUIClient")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
