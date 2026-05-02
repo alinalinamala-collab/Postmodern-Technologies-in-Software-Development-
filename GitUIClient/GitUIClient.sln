@@ -1,0 +1,35 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitUIClient", "GitUIClient.csproj", "{E0666E9C-04C0-4B5F-9500-72D4F8244D0C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{5854FF58-B8C5-05C6-5BF2-ACE42193F22B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "Services\WebApplication1\WebApplication1.csproj", "{09D562CD-0E39-9980-6153-CC0A04DDBAC0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E0666E9C-04C0-4B5F-9500-72D4F8244D0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0666E9C-04C0-4B5F-9500-72D4F8244D0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0666E9C-04C0-4B5F-9500-72D4F8244D0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0666E9C-04C0-4B5F-9500-72D4F8244D0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09D562CD-0E39-9980-6153-CC0A04DDBAC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09D562CD-0E39-9980-6153-CC0A04DDBAC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09D562CD-0E39-9980-6153-CC0A04DDBAC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09D562CD-0E39-9980-6153-CC0A04DDBAC0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{09D562CD-0E39-9980-6153-CC0A04DDBAC0} = {5854FF58-B8C5-05C6-5BF2-ACE42193F22B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6E430863-0866-472B-8E15-786662C350EE}
+	EndGlobalSection
+EndGlobal

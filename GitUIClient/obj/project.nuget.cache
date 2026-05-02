@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "ps3aGKmhXUCOgbsxQsaI8DSmHc08AZxXCTdwi3+tp6yQd4BClDiQmzpH7M35vtxOjbWqWevwUrYLIGHgO75WZA==",
+  "success": true,
+  "projectFilePath": "/home/alina/Postmodern in DevOps/lab4/GitUIClient/GitUIClient.csproj",
+  "expectedPackageFiles": [
+    "/home/alina/.nuget/packages/spectre.console/0.55.2/spectre.console.0.55.2.nupkg.sha512",
+    "/home/alina/.nuget/packages/spectre.console.ansi/0.55.2/spectre.console.ansi.0.55.2.nupkg.sha512"
+  ],
+  "logs": []
+}
