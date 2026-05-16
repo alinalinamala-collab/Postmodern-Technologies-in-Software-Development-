@@ -1,4 +1,4 @@
-﻿using Spectre.Console;
+using Spectre.Console;
 using GitUIClient.Services;
 
 IGitService gitService = new GitService();
